@@ -10,14 +10,14 @@ const keyword=["intaneti","tcra","nape nnauye"];
 const fs = require("fs");
 
 /* 
-    SamiaAbroad, sokomoko360@gmail.com
-    BOT NAME: SamiaAbroad
-    password: #Ushindi@1234 
-    const ApiKey ="4i2vY9gwWFHerxxR4oxxvGz85";
-    const ApiSecret = "YsQibuE2qu5xQ2yRKIIViz1CnB5H4bpcDmnP0Q9xDaX1qOZGSv";
-    const AccessToken = "1520461661177618434-fo96RZeErOfWnFc1f1ZOCdR6ZdSWJO";
-    const AccessSecret = "INihimdElgN3V77lGsUTfc7rAwC6Hd1fNfw6WNBpL93lQ";
-    const BareToken = "AAAAAAAAAAAAAAAAAAAAAGOJlgEAAAAAzH0RJgE6JRcil6pYvZNTWv8CAoY%3DjOPHm3xJOHtniQ30zk5MEszu8ZTcKysKvIZFe3DF5MkAFecKiv";
+  SamiaAbroad, sokomoko360@gmail.com
+  BOT NAME: SamiaAbroad
+  password: #Ushindi@1234 
+  const ApiKey ="4i2vY9gwWFHerxxR4oxxvGz85";
+  const ApiSecret = "YsQibuE2qu5xQ2yRKIIViz1CnB5H4bpcDmnP0Q9xDaX1qOZGSv";
+  const AccessToken = "1520461661177618434-fo96RZeErOfWnFc1f1ZOCdR6ZdSWJO";
+  const AccessSecret = "INihimdElgN3V77lGsUTfc7rAwC6Hd1fNfw6WNBpL93lQ";
+  const BareToken = "AAAAAAAAAAAAAAAAAAAAAGOJlgEAAAAAzH0RJgE6JRcil6pYvZNTWv8CAoY%3DjOPHm3xJOHtniQ30zk5MEszu8ZTcKysKvIZFe3DF5MkAFecKiv";
 */
 
 const T = new twit({
