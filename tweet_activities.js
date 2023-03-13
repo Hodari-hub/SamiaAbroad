@@ -1,4 +1,4 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 1;
 const needle = require('needle');
 const twit = require('twit');
 const ApiKey ="4i2vY9gwWFHerxxR4oxxvGz85";
@@ -40,24 +40,25 @@ function firstPost(){
 //run the test function 
 function runpost(img, title){
   console.log("the function is being fired!",img, title);
-  var b64content = fs.readFileSync(`./images/${img}`, { encoding: 'base64' });
-  T.post('media/upload', { media_data: b64content }, function (err, data, response) {
-    // now we can assign alt text to the media, for use by screen readers and
-    // other text-based presentations and interpreters
-    var mediaIdStr = data.media_id_string
-    var altText = title
-    var meta_params = {media_id: mediaIdStr, alt_text: { text: altText }}
-
-    try{
+  try{
+    var b64content = fs.readFileSync(img, { encoding: 'base64' });
+    T.post('media/upload', { media_data: b64content }, function (err, data, response) {
+      // now we can assign alt text to the media, for use by screen readers and
+      // other text-based presentations and interpreters
+      var mediaIdStr = data.media_id_string
+      var altText = title
+      var meta_params = {media_id: mediaIdStr, alt_text: { text: altText }}
+      
       T.post('media/metadata/create', meta_params, function (err, data, response) {
         if(err) throw err;
         // now we can reference the media and post a tweet (media will attach to the tweet)
         var params = { status: `${title}`, media_ids: [mediaIdStr] }
         T.post('statuses/update', params, function (err, data, response) { console.log(data); });
       });
-    }
-    catch(e){console.log(`The error is: ${e}`);}
-  });
+      
+    });
+  }
+  catch(e){console.log(`The error is: ${e}`);}
 }
 
 // Get stream rules
