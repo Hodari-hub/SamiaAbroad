@@ -39,7 +39,6 @@ function firstPost(){
 
 //run the test function 
 function runpost(img, title){
-  console.log("the function is being fired!",img, title);
   try{
     var b64content = fs.readFileSync(img, { encoding: 'base64' });
     T.post('media/upload', { media_data: b64content }, function (err, data, response) {
